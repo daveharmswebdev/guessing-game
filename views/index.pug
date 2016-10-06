@@ -1,0 +1,11 @@
+doctype
+html
+	head
+		title Guessing Game
+		link(rel='stylesheet', href='/style.css')
+	body
+		h1 Guessing Game
+		h2 Select a game
+		ul
+			for game in games
+				li: a(href=`/game/${game}`) Game: #{game}

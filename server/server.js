@@ -5,7 +5,7 @@ const { Server } = require('http')
 const mongoose = require('mongoose')
 const socketio = require('socket.io')
 
-// const routes = require('./routes')
+const routes = require('./routes')
 
 //create app from express
 const app = express()
@@ -22,7 +22,7 @@ const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/guessi
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/', (req, res) => res.render('home'))
+app.use(routes)
 
 mongoose.Promise = Promise
 mongoose.connect(MONGODB_URL, () => {
