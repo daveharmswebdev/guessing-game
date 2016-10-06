@@ -6,5 +6,7 @@ const button = document.getElementById('button')
 const number = document.getElementById('number')
 
 button.addEventListener('click', () => {
-	console.log('hello click', number.value)
+	const guess = number.value
+	console.log('hello click', guess)
+	socket.emit('guess', {guess: guess})
 })

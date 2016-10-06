@@ -36,4 +36,6 @@ io.on('connect', socket => {
 	console.log('id:', id)
 
 	socket.on('disconnect', () => console.log('disconnect socket:', socket.id))
+	socket.on('guess', guess => console.log('guess', guess))
 })
+
