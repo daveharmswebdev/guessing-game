@@ -22,7 +22,7 @@ const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/guessi
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/', (req, res) => res.send('hello world'))
+app.get('/', (req, res) => res.render('home'))
 
 mongoose.Promise = Promise
 mongoose.connect(MONGODB_URL, () => {
